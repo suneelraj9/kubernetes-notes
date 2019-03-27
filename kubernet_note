@@ -40,3 +40,44 @@ After install you can open the browser and run redb:8000 to start using wordpres
  volumes:
   db_data:
   ************************
+
+Why container Orchestration?
+****************************
+
+  >Container orchestration manages availability, scaling and networking of the containers
+
+  >It helps in monitoring the cluster
+
+  >It helps in managing the timing of container creation
+
+  >It helps in container configuration in order to allow containers to communicate with one another
+  
+Top 3 Container Orchestrators
+*****************************
+  >Docker Swarm
+  >Mesos
+  >Kubernetes
+
+  Docker swarm - It can run only on docker run(docker engine)
+  kubernets - It can run on any operating system(container)
+
+  Docker swarm - Volumes are not tightly coupled
+  kubernet - volumes are tighly coupled
+
+  Docker swarm - less reliable, less cost
+  kubernet - More reliable, expensive
+
+Creating a swarm on the manager1 machine:
+  docker swarm init --advertise-addr 192.168.56.101
+
+  Result of the output need to run it on node which we are trying to joined as cluster
+
+Check the node details of cluster
+  docker node ls
+
+pull the docker image and create the service
+  #docker pull httpd
+  #docker service create --name web -p 80:80 httpd -d
+
+check the services which running
+  #docker service ls 
