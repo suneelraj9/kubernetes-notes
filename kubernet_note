@@ -68,9 +68,9 @@ Top 3 Container Orchestrators
   kubernet - More reliable, expensive
 
 Creating a swarm on the manager1 machine:
-  docker swarm init --advertise-addr 192.168.56.101
+  docker swarm init --advertise-addr 192.168.56.101  ---> this is the master server
 
-  Result of the output need to run it on node which we are trying to joined as cluster
+  Note: Result of the output need to run it on node which we are trying to joined as cluster
 
 Check the node details of cluster
   docker node ls
@@ -81,3 +81,18 @@ pull the docker image and create the service
 
 check the services which running
   #docker service ls 
+  #curl localhost:80
+  
+verbose information of the service
+  #docker service inspect --pretty helloworld or httpd etc.,
+  
+check where the service is running
+  #docker service ps web 
+  
+Create more replicals
+  #docker service scale id=3
+  
+  check out replicas status
+   #docker service ls
+   #docker service ps web
+   Note: In video you can see three replica IP one is master and other two is node(same)
