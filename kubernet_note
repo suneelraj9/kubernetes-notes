@@ -96,3 +96,16 @@ Create more replicals
    #docker service ls
    #docker service ps web
    Note: In video you can see three replica IP one is master and other two is node(same)
+   
+Kubernet architecture
+**********************
+ > kubernet components
+   > kubernet master components
+     ->kube-apiserver
+     ->kube-controller-manager
+     ->kube-scheduler
+     ->etcd key-value store
+     ->cloud controlled manager
+   > kerbernet node components
+     ->kubelet
+     ->kube-proxy
